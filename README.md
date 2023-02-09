@@ -26,5 +26,17 @@
 
 ## 注意事项与帮助
 
-> 使用spdk模式测试时请使用Centos8.5或更换与Centos8.5内核版本相同或更新的版本使用
+> 使用spdk模式测试时请使用Centos8.5或更换内核版本到4.18.0-348.7.1.el8_5.x86_64（CentOS Linux release 8.5.2111）或更新
+
+```shell
+example:
+ ./fio-spdk.sh [-t nvme|spdk] -d "nvme0n1 nvme1n1" [-c "0-7 8-15" | -n "0 1"] [-j job_cfg_file]
+         -t: nvme|spdk, test using nvme driver or spdk. default is nvme. optional
+         -d: drive list. mandatory option
+         -c: cpu core bind list. bind list is corresponding to drive list. optional
+         -n: numa node bind list. -n takes precendence when both -c and -n are used. optional
+         -j: job config file. default config file is "job_cfg_common". optional
+```
+
+
 
