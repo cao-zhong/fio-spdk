@@ -67,9 +67,12 @@ example:
 ## 配置文件 （参数：-j）
 
 使用 `-j` 参数接收配置文件来自定义测试模型，如果不添加 `-j` 参数默认执行 `job_cfg_common` 中的配置
+如果只测试随机读可使用 `job_cfg_randread` 
 
 ```shell
 ./fio-spdk -d nvme0n1 -j test_cfg
+
+./fio-spdk -d nvme0n1 -j job_cfg_randread
 ```
 
 可通过修改 `test_cfg` 文件中 `workloads` 来指定：读写模式、块大小、队列数、队列深度.
