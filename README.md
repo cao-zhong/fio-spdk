@@ -1,7 +1,4 @@
-# fio-spdk
-NVMe SSD test scripts, support both conventional test on top block dev and SPDK
 # FIO-SPDK脚本使用说明
-
 
 
 此工具主要应用于NVMe SSD测试，单盘测试默认可覆盖多种IO模型，也可根据需求自定义IO模型
