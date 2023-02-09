@@ -24,7 +24,7 @@
 - 绑核、绑numa（参数：-c / -n）
 - nvme、spdk模式（参数：-t）
 - 日志输出
-
+- 执行示例
 
 
 ## 注意事项
@@ -203,4 +203,31 @@ NUMA node1 CPU(s):     28-55,84-111
 4 directories, 2 files
 ```
 
+## 执行示例
+
+标准测试
+
+```shell
+#默认测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 ...." [-t spdk]
+
+#绑核测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 nvme3n1...." [-t spdk] -c "0-3 4-7 8-11 12-15....."
+
+#绑numa测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 ...." [-t spdk] -c "0 0 1 1....."
+```
+
+自定义模型测试
+
+```shell
+#默认测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 ...." [-t spdk] -j test_cfg
+
+#绑核测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 nvme3n1...." [-t spdk] -c "0-3 4-7 8-11 12-15....." -j test_cfg
+
+#绑numa测试
+./fio-spdk -d "nvme0n1 nvme1n1 nvme2n1 ...." [-t spdk] -c "0 0 1 1....." -j test_cfg
+```
 
