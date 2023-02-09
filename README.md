@@ -33,7 +33,7 @@
 
 
 
-## 获取工具
+## 获取工具与帮助
 
 ```shell
 git clone https://github.com/jinqiangwang/fio-spdk.git
