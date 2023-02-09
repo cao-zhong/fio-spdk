@@ -38,5 +38,3 @@ example:
          -j: job config file. default config file is "job_cfg_common". optional
 ```
 
-
-
